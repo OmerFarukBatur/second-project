@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+/* import Counter from './components/Counter' */
+/* import InputExample from './components/InputExample' */
+/* import UseLifeCycle from './components/UseLifeCycle' */
+import ComponentUnmountExample from './components/ComponentUnmountExample'
 
 function App() {
+
+const[isVisible, setIsVisible] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Counter/> */}
+      {/* <InputExample/> */}
+      {/* <UseLifeCycle/> */}
+
+      {isVisible && <ComponentUnmountExample/>}
+
+<br></br>
+<button onClick={() => setIsVisible(!isVisible)}>Toggle Component </button>
     </div>
   );
 }
